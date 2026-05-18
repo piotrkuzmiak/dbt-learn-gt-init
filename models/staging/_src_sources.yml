@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        identifier: jaffle_shop_customers
+        description: "This is the customers table from the jaffle_shop database."
+      - name: orders
+        identifier: jaffle_shop_orders
+        description: "This is the orders table from the jaffle_shop database."
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payments
+        identifier: payments
+        description: "This is the payments table from the stripe database."
