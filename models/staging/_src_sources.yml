@@ -4,6 +4,10 @@ sources:
   - name: jaffle_shop
     database: raw
     schema: jaffle_shop
+    config:
+      freshness:
+        warn_after: {count: 2, period: hour}
+        error_after: {count: 4, period: day}
     tables:
       - name: customers
         identifier: jaffle_shop_customers
@@ -14,7 +18,12 @@ sources:
   - name: stripe
     database: raw
     schema: stripe
+    config:
+      freshness:
+        warn_after: {count: 2, period: hour}
+        error_after: {count: 4, period: day}
     tables:
       - name: payments
         identifier: payments
         description: "This is the payments table from the stripe database."
+    
