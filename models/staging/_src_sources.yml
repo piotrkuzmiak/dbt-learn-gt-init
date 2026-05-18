@@ -12,6 +12,12 @@ sources:
       - name: customers
         identifier: jaffle_shop_customers
         description: "This is the customers table from the jaffle_shop database."
+        columns:
+          - name: id
+            description: primary key
+            data_tests:
+              - unique
+              - not_null 
       - name: orders
         identifier: jaffle_shop_orders
         description: "This is the orders table from the jaffle_shop database."
