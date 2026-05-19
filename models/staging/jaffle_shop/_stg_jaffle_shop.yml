@@ -1,22 +1,30 @@
+version: 2
+
 models:
   - name: stg_jaffle_shop_customers
+    description: "One row per customer, sourced from the jaffle_shop_customers table."
     columns:
       - name: customer_id
+        description: "Primary key for the customer."
         data_tests:
           - unique
           - not_null
   - name: stg_jaffle_shop_orders
+    description: "One row per order, sourced from the jaffle_shop_orders table."
     columns:
       - name: order_id
+        description: "Primary key for the order."
         data_tests:
           - unique
           - not_null
       - name: status
+        description: "{{ doc('order_status') }}"
         data_tests:
           - accepted_values:
               arguments:
-                values: ['placed', 'returned', 'completed','shipped','return_pending']
+                values: ['placed', 'returned', 'completed', 'shipped', 'return_pending']
       - name: customer_id
+        description: "The customer's id who placed the order."
         data_tests:
           - relationships:
               arguments:

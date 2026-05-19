@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: "This is the source for the jaffle_shop database stored in databricks."
     database: raw
     schema: jaffle_shop
     config:
@@ -11,19 +12,20 @@ sources:
     tables:
       - name: customers
         identifier: jaffle_shop_customers
-        description: "This is the customers table from the jaffle_shop database."
+        description: "Raw customers table from the jaffle_shop database stored in databricks."
         columns:
           - name: id
             description: primary key
             data_tests:
               - unique
-              - not_null 
+              - not_null
       - name: orders
         identifier: jaffle_shop_orders
-        description: "This is the orders table from the jaffle_shop database."
+        description: "Raw orders table from the jaffle_shop database stored in databricks."
   - name: stripe
     database: raw
     schema: stripe
+    description: "This is the source for the stripe database stored in databricks."
     config:
       freshness:
         warn_after: {count: 2, period: hour}
@@ -31,5 +33,4 @@ sources:
     tables:
       - name: payments
         identifier: payments
-        description: "This is the payments table from the stripe database."
-    
+        description: "Raw payments table from the stripe database."
