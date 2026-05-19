@@ -1,0 +1,10 @@
+macros:
+  - name: cents_to_dollars
+    description: "Converts a value in cents to dollars, with optional precision."
+    arguments:
+      - name: column_name
+        description: "The name of the column containing the value in cents."
+        type: string
+      - name: precision
+        description: "The number of decimal places to round to (default is 2)."
+        type: integer
